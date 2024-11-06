@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/db";
 import paths from "@/path";
 import { revalidatePath } from "next/cache";
+
 const createTopicSchema = z.object({
   name: z
     .string()
@@ -34,6 +35,11 @@ export async function createTopic(
 
   //   console.log(name, description);
 
+  //   await new Promise<void>((resolve) =>
+  //     setTimeout(() => {
+  //       resolve();
+  //     }, 2500)
+  //   );
   const result = createTopicSchema.safeParse({
     name: formData.get("name"),
     description: formData.get("description"),
