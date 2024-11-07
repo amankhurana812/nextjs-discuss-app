@@ -11,7 +11,6 @@ import {
 } from "@nextui-org/react";
 
 import * as actions from "@/actions";
-import { error } from "console";
 // import FormButton from "../common/form-button";
 
 interface PostCreateFormProps {

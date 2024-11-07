@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Input,
+  //   Input,
   //   Button,
   //   Avatar,
   //   Popover,
@@ -17,6 +17,8 @@ import {
 // import { auth } from "@/auth";
 // import * as actions from "@/actions";
 import HeaderAuth from "@/components/header-auth";
+import SearchInput from "./search-input";
+import { Suspense } from "react";
 
 export default function Header() {
   //   const session = await auth();
@@ -68,7 +70,9 @@ export default function Header() {
       </NavbarBrand>
       <NavbarContent justify="center">
         <NavbarItem>
-          <Input />
+          <Suspense>
+            <SearchInput />
+          </Suspense>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">

@@ -2,7 +2,7 @@
 
 import { auth } from "@/auth";
 import { z } from "zod";
-import type { Post, Topic } from "@prisma/client";
+import type { Post } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { db } from "@/db";
 import paths from "@/path";

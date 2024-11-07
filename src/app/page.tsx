@@ -3,9 +3,12 @@
 // import { auth } from "@/auth";
 // import Profile from "@/components/profile";
 
+import PostList from "@/components/posts/post-list";
 import TopicList from "@/components/topics/topic-list";
 import TopicCreateForm from "@/components/topics/topics-create-form";
+import { fetchTopPosts } from "@/db/queries/post";
 import { Divider } from "@nextui-org/react";
+
 export default function Home() {
   // const session = await auth();
   return (
@@ -13,6 +16,7 @@ export default function Home() {
       {/* HOme Page */}
       <div className="col-span-3">
         <h1 className="text-xl m-2">Top Posts</h1>
+        <PostList fetchData={fetchTopPosts} />
       </div>
       <div className="border shadow py-3 px-2">
         <TopicCreateForm />

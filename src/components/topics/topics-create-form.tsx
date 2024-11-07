@@ -10,14 +10,13 @@ import {
   Textarea,
 } from "@nextui-org/react";
 import * as actions from "@/actions";
-import FormButton from "../common/form-button";
+// import FormButton from "../common/form-button";
 
 export default function TopicCreateForm() {
   const [formState, action, isPending] = useActionState(actions.createTopic, {
     errors: {},
   });
 
-  console.log(177, formState);
   return (
     <Popover placement="left">
       <PopoverTrigger>
