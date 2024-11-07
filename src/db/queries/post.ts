@@ -1,4 +1,4 @@
-import type { Post } from "@prisma/client";
+import type { Post, Topic } from "@prisma/client";
 import { db } from "@/db";
 export type PostWithData = Post & {
   topic: { slug: string };
@@ -35,6 +35,14 @@ export function fetchPostByTopicSlug(slug: string): Promise<PostWithData[]> {
       topic: { select: { slug: true } },
       user: { select: { name: true } },
       _count: { select: { comments: true } },
+    },
+  });
+}
+
+export function fetchTopicBySlug(slug: string): Promise<Topic | null> {
+  return db.topic.findFirst({
+    where: {
+      slug,
     },
   });
 }
